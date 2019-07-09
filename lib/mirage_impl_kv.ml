@@ -25,7 +25,7 @@ let crunch dirname = impl @@ object
       Bos.OS.Path.exists dir >>= function
       | true ->
         Mirage_impl_misc.Log.info (fun m -> m "Generating: %a" Fpath.pp file);
-        Bos.OS.Cmd.run Bos.Cmd.(v "ocaml-crunch" % "-o" % p file % p dir)
+        Bos.OS.Cmd.run Bos.Cmd.(v "dune" % "exec" % "--" % "ocaml-crunch" % "-o" % p file % p dir)
       | false ->
         R.error_msg (Fmt.strf "The directory %s does not exist." dirname)
     method! clean _i =
