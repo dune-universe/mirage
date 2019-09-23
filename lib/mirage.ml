@@ -980,7 +980,7 @@ module Project = struct
         ] in
         Key.match_ Key.(value target) @@ function
         | `Unix | `MacOSX ->
-          package ~min:"3.2.0" ~max:"4.0.0" "mirage-unix" :: common
+          package ~min:"4.0.0" ~max:"5.0.0" "mirage-unix" :: common
         | `Xen | `Qubes ->
           package ~min:"4.0.0" ~max:"5.0.0" "mirage-xen" :: common
         | `Virtio | `Hvt | `Muen | `Genode as tgt ->
