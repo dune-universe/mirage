@@ -984,7 +984,7 @@ module Project = struct
         | `Xen | `Qubes ->
           package ~min:"4.0.0" ~max:"5.0.0" "mirage-xen" :: common
         | `Virtio | `Hvt | `Muen | `Genode as tgt ->
-          package ~ocamlfind:[] (fst (solo5_pkg tgt)) ::
+          package ~min:"0.4.0" ~max:"0.5.0" ~ocamlfind:[] (fst (solo5_pkg tgt)) ::
           package ~min:"4.0.0" ~max:"5.0.0" "mirage-solo5" ::
           common
 
